@@ -1,0 +1,8 @@
+DB_NAME: None
+DB_USER: None
+DB_PASSWORD: None
+DB_HOST: None
+DB_PORT: None
+DEBUG: True
+ALLOWED_HOSTS: ['*']
+CORS_ALLOWED_ORIGINS: ['http://localhost:3000', 'http://3.252.131.54:3001']
