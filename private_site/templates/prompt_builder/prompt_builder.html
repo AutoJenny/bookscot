@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Prompt Builder</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Include your React app's compiled CSS -->
+    <link rel="stylesheet" href="{% static 'css/prompt_builder.css' %}">
+</head>
+<body>
+    <div id="root"></div> <!-- React will attach to this div -->
+
+    <!-- Include jQuery, required for Bootstrap's JavaScript plugins -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js, required for Bootstrap's JavaScript plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Include Bootstrap JS for component interaction -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include your React app's compiled JavaScript -->
+    <script src="{% static 'js/prompt_builder.js' %}"></script>
+</body>
+</html>

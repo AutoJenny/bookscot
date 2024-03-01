@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="main-footer">
+    <div class="footer-section footer-left">
+        <a href="https://clan.com" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'images/site/clan-logo-header.png' %}" alt="CLAN.com logo" class="footer-logo" />
+        </a>
+        <div class="footer-strapline">
+            Thanks for the generous support of our lead Sponsor</br>
+            <a href="https://clan.com" target="_blank" class="footer-link">
+                CLAN.com
+            </a>
+        </div>
+    </div>
+    <div class="footer-section footer-middle">
+        <!-- Add site links here -->
+        <a href="site/AboutUs" class="footer-link">About us</a>
+        <a href="site/Sponsorship" class="footer-link">Sponsorship &amp; advertising</a>
+        <a href="site/Contact" class="footer-link">Contact &amp; feedback</a>
+        <!-- More links as needed -->
+    </div>
+    <div class="footer-section footer-right">
+        <a href="https://bookofscotland.com" target="_blank" rel="noopener noreferrer">
+            © {{ current_year }} Book of Scotland
+        </a>
+    </div>
+</div>

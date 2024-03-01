@@ -1,0 +1,897 @@
+
+
+/*******************************************************/
+                /* Core colours */
+/*******************************************************/
+:root {
+  --dark-brown: #3E2723;
+  --light-cream: #FFF8E1;
+  --subtle-blue: #90A4AE;
+  --soft-brown: #A1887F;
+  --mid-tone-blue: #78909C;
+  --light-blue: #CFD8DC;
+}
+
+/*******************************************************/
+/* Responsive Styles */
+/*******************************************************/
+
+/*******************************************************/
+/* Header Styles */
+/*******************************************************/
+.header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between; /* This will space out the children */
+  width: 100%;
+}
+
+.header-logo {
+  /* Remove fixed width and use padding/margin as needed */
+  padding-left: 10px; /* Keeps the logo 10px from the left */
+}
+
+.header-title {
+  /* Remove fixed width for natural centering */
+  text-align: center;
+  margin-top: -10px;
+  flex-grow: 1; /* Allows the title to take up remaining space */
+}
+
+.header-search {
+  /* Remove fixed width and adjust as needed */
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+/*******************************************************/
+              /* Content area with sidebars */
+/*******************************************************/
+
+.container-1400px {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 10px; /* Adjusted to account for header height */
+  padding-bottom: 20px;
+  height: 100%;
+}
+
+.left-sidebar, .right-sidebar {
+  width: 250px;
+  background-color: rgba(255, 255, 240, 0.5);
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 20px;
+  margin-top: 20px; /* Added to start below breadcrumbs */
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: transparent;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Adjust this as needed */
+}
+
+
+/*******************************************************/
+              /* Main styling */
+/*******************************************************/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/static/images/site/bookofscotland_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Lato', sans-serif;
+  color: var(--dark-brown);
+  background-color: var(--light-cream);
+}
+
+/*******************************************************/
+              /* Links */
+/*******************************************************/
+
+a {
+color: var(--light-cream);
+text-decoration: none; /* Removes underline from all links */
+}
+
+/* Link hover styles */
+a:hover {
+text-decoration: none; /* Keeps underline removed on hover */
+}
+
+/* Button primary styles */
+.btn-primary {
+color: var(--light-cream);
+text-decoration: none; /* Ensures no underline for button-like links */
+}
+
+/*******************************************************/
+              /* Header & footer */
+/*******************************************************/
+
+
+header {
+  background-color:  rgba(49, 49, 49, 0.8);color: var(--light-cream);
+  text-align: center;
+  padding: 0; /* Adjust or remove padding */
+  height: 50px; /* Fixed height */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed at the top */
+  top: 0; /* Align to the top of the page */
+  left: 0; /* Align to the left of the page */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+header h1 {
+  margin: 0; /* Reset default margin */
+  line-height: 50px; /* Center text vertically */
+  /* Add other styles as needed */
+}
+
+.custom-footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(49, 49, 49, 0.8);
+  color: var(--dark-brown);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.custom-footer-logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.custom-footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.custom-footer-strapline {
+  text-align: center;
+  color: wheat;
+  font-size: smaller;
+}
+
+.custom-footer-left {
+  text-align: center;
+  color: wheat;
+  font-size: smaller;
+  align-self: flex-end; /* Align to the bottom of the container */
+}
+
+.custom-footer-right {
+  text-align: center;
+  color: wheat;
+  font-size: smaller;
+  align-self: flex-end; /* Align to the bottom of the container */
+}
+
+.custom-footer-link {
+  color: rgb(248, 248, 250);
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+
+.breadcrumbs-container {
+  width: 100%;
+  padding: 2px 5px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  padding-left: 90px; /* Add left padding */
+}
+
+.breadcrumbs-container .breadcrumb-item {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.breadcrumbs-container .breadcrumb-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumbs-container .breadcrumb-item:not(:last-child)::after {
+  content: '>'; /* Optional: change this to your preferred separator */
+  margin-left: 10px;
+  color: var(--dark-brown);
+}
+
+/*******************************************************/
+              /* Template components */
+/*******************************************************/
+
+
+/***************** Directory page title area */
+
+.directory-title-container {
+position: relative;
+margin: 20px auto; /* Center the container horizontally */
+display: block;
+width: 60%; /* Reduce the width by 25% */
+}
+
+.directory-title-container img {
+width: 100%; /* Make the image expand to fill the container */
+display: block;
+border-radius: 20px;
+}
+
+.title-overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+border-radius: 20px; /* Restoring the border-radius for the whole overlay */
+background: rgba(255, 255, 255, 0.5); /* Optional: background for the whole overlay */
+}
+
+.title-background {
+background: rgba(255, 255, 255, 0.75); /* 75% transparent white */
+padding: 20px; /* 20px padding around the text */
+width: 100%; /* Ensure full width coverage */
+box-sizing: border-box; /* Include padding and border in width */
+}
+
+.title-overlay h1 {
+margin: 0;
+text-align: center;
+font-size: 48px; 
+font-weight: 600;
+background: inherit; /* Inherit the background */
+}
+
+.directory-blurb {
+  color: var(--dark-brown);
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  padding-left: 40px; /* Add left padding */
+  text-shadow: 0 0 5px white; /* Apply white glow */
+}
+
+/***************** Directory aricle */
+
+.article-container {
+  background: rgba(255, 255, 255, 0.9); /* 90% white background */
+  border-radius: 5px; /* Restoring the border-radius for the whole overlay */
+  padding-top: 50px; /* 50px offset from the top + 20px to counteract the negative margin */
+  /* Add additional padding as needed for other sides */
+  padding: 80px 60px 60px; /* Adjust as necessary */
+  /* Add any other styling as needed */
+  width: 80%; /* Reduce the width by 25% */
+  margin-left: auto; /* Center align horizontally */
+  margin-right: auto; /* Center align horizontally */
+  margin-top: -80px; /* Push up the page by 40px */
+}
+
+.article-container:hover {
+  background: rgba(255, 255, 255, 0.95); /* 95% white background on hover */
+}
+
+.main-article {
+  /* Styles for the main article container */
+}
+
+.article-image img {
+  width: 100%; /* Make the image responsive */
+  height: auto;
+  /* Add more styling as needed */
+}
+
+.article-title {
+  margin-top: 20px; /* Spacing above the title */
+  /* Additional title styling */
+}
+
+.article-content {
+  font-size: large;
+  margin-top: 40px; /* Spacing above the content */
+  /* Additional content styling */
+}
+
+/***************** Static page aricle */
+
+.static-article-container {
+  background: rgba(255, 255, 255, 0.9); /* 90% white background */
+  border-radius: 5px; /* Restoring the border-radius for the whole overlay */
+  padding-top: 50px; /* 50px offset from the top + 20px to counteract the negative margin */
+  /* Add additional padding as needed for other sides */
+  padding: 60px 40px 40px; /* Adjust as necessary */
+  /* Add any other styling as needed */
+  width: 80%; /* Reduce the width by 25% */
+  margin-left: auto; /* Center align horizontally */
+  margin-right: auto; /* Center align horizontally */
+  margin-top: 20px; /* Push up the page by 40px */
+}
+
+.static-article-container:hover {
+  background: rgba(255, 255, 255, 0.95); /* 95% white background on hover */
+}
+
+.main-article {
+  /* Styles for the main article container */
+}
+
+.article-image img {
+  width: 100%; /* Make the image responsive */
+  height: auto;
+  /* Add more styling as needed */
+}
+
+.article-title {
+  margin-top: 20px; /* Spacing above the title */
+  /* Additional title styling */
+}
+
+.article-content {
+  margin-top: 10px; /* Spacing above the content */
+  /* Additional content styling */
+}
+
+
+/***************** Subdirectories section */
+
+.subdirectories-container {
+  background-color: rgba(74, 42, 19, 0.9); /* 10% transparent dark brown */
+  padding: 15px;
+  align-self: center;
+  width: 80%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 20px; /* Add space above the container */
+  margin-left: auto; /* Center align horizontally */
+  margin-right: auto; /* Center align horizontally */
+  overflow-y: scroll; /* Add scrolling */
+}
+}
+.subdirectories-container:hover {
+  background-color: rgba(74, 42, 19,, 0.99); /* 95% white background on hover */
+}
+
+.subdirectory-title {
+  text-align: center; /* Centers the text */
+  color: white; /* Sets the text color to white */
+  font-size: 24px; /* Adjust the font size as needed for 'large' */
+  margin-bottom: 40px; /* Space below the title */
+}
+
+/* Subdirectory List */
+.subdirectory-list {
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0;
+}
+
+/* Subdirectory Item */
+.subdirectory-item {
+  margin-bottom: 10px;
+  color: var(--light-cream);
+}
+
+/* Subdirectory Link */
+.subdirectory-link {
+  color: var(--light-cream);
+  font-size: 24px;
+  text-decoration: none; /* Removes underline */
+  font-weight: bold;
+}
+
+.subdirectory-link:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Subdirectory Blurb */
+.subdirectory-blurb {
+  color: var(--mid-tone-blue);
+  font-size: 14px; /* Adjust font size as needed */
+  margin-top: 5px; /* Space between title and blurb */
+}
+
+
+/*******************************************************/
+              /* Search */
+/*******************************************************/
+
+
+/* Search Box Styles */
+.nav-home-search {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+margin-bottom: 120px;
+position: relative; /* Added for z-index context */
+}
+
+.search-input {
+width: 60%;
+height: 60px;
+border-radius: 25px;
+background-color: white;
+border: 1px solid #ccc;
+padding: 10px 40px 10px 10px; /* Space for the clear icon */
+font-size: 16px;
+color: grey;
+position: relative;
+z-index: 2; /* Ensure it's above the results */
+}
+
+.search-input:focus, .search-input:not(:placeholder-shown) {
+border-color: transparent; /* Hide border on focus and when typing */
+outline: none; /* Remove default focus outline */
+}
+
+/* Clear Icon */
+.search-input-clear {
+display: none;
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+border: none;
+background: none;
+font-size: 20px;
+color: grey;
+}
+
+/* Hide the clear button by default and show only when there's text */
+.search-input-clear.hidden {
+display: none;
+}
+.search-input::after:hover {
+color: var(--dark-brown);
+}
+
+/* Search Results Styles */
+.search-results {
+width: 60%;
+max-height: 350px;
+overflow-y: auto;
+background-color: white;
+border-radius: 0 0 20px 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+border: 1px solid #ccc;
+border-top: none; /* Remove top border */
+padding: 30px; /* Space at the top inside the box */
+margin-top: -40px; /* Space between search input and results */
+display: none; /* Initially hidden */
+}
+
+/* Search Result Item Styles */
+.search-result-item {
+font-size: 18px;
+text-decoration: none;
+background-color: white; /* Background color */
+padding: 10px 20px; /* Padding inside each item */
+margin-bottom: 5px; /* Space between items */
+border-radius: 5px; /* Rounded corners for each item */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+color: var(--dark-brown); /* Text color, adjust as needed */
+transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.search-result-item:hover {
+background-color: #f8f8f8; /* Lighter background on hover */
+text-decoration: none;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+.search-result-item div {
+margin-bottom: 5px; /* Space between title and blurb */
+}
+
+.search-result-item .blurb {
+font-size: 12px; /* Smaller font size for blurb */
+color: grey; /* Grey color for blurb */
+font-weight: normal;
+max-width: 90%; /* Limit width to avoid overflow */
+overflow: hidden; /* Hide overflow */
+text-overflow: ellipsis; /* Ellipsis for text overflow */
+padding-left: 20px; 
+}
+
+.highlight {
+background-color: yellow;
+font-weight: bold;
+}
+
+/*******************************************************/
+              /* Search boxes */
+/*******************************************************/
+
+
+/* Header Search Container */
+.nav-header-search {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  position: relative; /* Maintain relative positioning for child elements */
+  width: auto; /* Let it size according to its content */
+}
+
+/* Header Search Input */
+.header-search-input {
+  width: 260px; /* Slightly wider than the original */
+  height: 35px; /* Smaller height for header context */
+  border-radius: 18px; /* Rounded corners */
+  background-color: var(--dark-brown); /* Dark brown background */
+  border: none; /* No border */
+  padding: 5px 10px; /* Adjust padding */
+  font-size: 14px; /* Smaller font size */
+  color: var(--light-cream); /* Subtle text color */
+  margin-right: 10px; /* Right align with 10px inset */
+}
+
+.header-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Lighter color for placeholder */
+}
+
+/* Clear Icon in Header */
+.header-search-input-clear {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 10px; /* Adjust position */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px; /* Adjust size */
+  color: var(--light-cream); /* Color consistent with the header theme */
+}
+
+.header-search-input-clear.hidden {
+  display: none;
+}
+
+/* Header Search Results */
+.header-search-results {
+  width: 260px; /* Same width as the input for alignment */
+  margin-top: -29px;
+  text-align: left;
+  max-height: calc(100vh - 120px); /* Height just above the bottom of the screen */
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 0 0 12px 12px; /* Rounded corners on bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border: none; /* Remove border */
+  padding: 15px; /* Inner padding */
+  position: absolute; /* Position relative to search container */
+  top: 100%; /* Below the search input */
+  right: 10px; /* Right align with 10px inset */
+  z-index: 3; /* Ensure it's above other elements */
+  display: none; /* Initially hidden */
+}
+
+/* Scrolling Section */
+.header-search-results .scrolling-section {
+  max-height: 200px; /* Set the maximum height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Header Search Result Item */
+.header-search-result-item {
+  font-size: 14px; /* Smaller font size */
+  text-decoration: none;
+  background-color: white;
+  padding: 8px 15px; /* Adjust padding */
+  margin-bottom: 4px; /* Smaller space between items */
+  border-radius: 4px;
+}
+.header-search-results {
+  .header-search-result-item:hover {
+    text-decoration: none; /* Remove underlining on hover */
+  }
+  width: 260px; /* Same width as the input for alignment */
+  max-height: calc(100vh - 120px); /* Height just above the bottom of the screen */
+  background-color: white;
+  border-radius: 0 0 12px 12px; /* Rounded corners on bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border: none; /* Remove border */
+  padding: 15px; /* Inner padding */
+  position: absolute; /* Position relative to search container */
+  top: 100%; /* Below the search input */
+  right: 10px; /* Right align with 10px inset */
+  z-index: 3; /* Ensure it's above other elements */
+  display: none; /* Initially hidden */
+}
+
+ 
+  /* Header Search Result Item */
+  .header-search-result-item {
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    padding: 8px 15px; /* Adjust padding */
+    margin-bottom: 0px; /* Smaller space between items */
+    border-radius: 4px;
+    color: var(--dark-brown);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.header-search-result-item:hover {
+  background-color: #f0f0f0; /* Lighter background on hover */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header-search-result-item .blurb {
+  font-size: 12px; /* Maintain smaller size for blurb */
+  color: grey;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Highlight for search terms */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/*******************************************************/
+              /* Homepage nav boxes */
+/*******************************************************/
+
+.nav-box {
+display: block;
+padding: 20px;
+height: 120px;
+border-radius: 10px;
+border: 1px solid transparent;
+background-color: rgba(237, 239, 240, 0.5);
+color:  #3E2723;
+transition: all 0.3s ease;
+}
+
+.nav-box:hover {
+border-color: gray;
+background-color: #f8f9fa;
+}
+
+.nav-box h2 {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+transition: transform 0.3s ease;
+}
+
+.nav-box:hover h2 {
+transform: translateX(10px);
+}
+
+.nav-box p {
+font-size: 14px;
+opacity: 0.7;
+}
+
+
+/*******************************************************/
+              /* Contact form & Modal */
+/*******************************************************/
+
+/* Contact Form Styles */
+
+
+.modal {
+  max-width: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.7); 
+  border-top-right-radius: 50px; 
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: auto; 
+  z-index: 10000;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  position: relative; /* This will help absolute positioning of the close button */
+  width: 80%;
+}
+
+.contact-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style for all input fields, textarea, and select */
+.contact-form select, 
+.contact-form input, 
+.contact-form textarea {
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for submit button */
+.contact-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style for submit button when clicked */
+.contact-form button[type="submit"].submitted {
+  background-color: #28a745; /* Bootstrap's success green */
+  color: white;
+}
+
+/* Style for required fields */
+.contact-form input:required, 
+.contact-form select:required, 
+.contact-form textarea:required {
+  background-color: #ffe6e6; 
+  border-bottom: 2px solid red;
+}
+/* The Close Button */
+.modal-close {
+  color: #f80202;
+  position: absolute; /* Position it absolutely within the relative parent */
+  right: 10px; /* 10px from the right edge of the modal content */
+  top: 10px; /* 10px from the top edge of the modal content */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+
+/*******************************************************/
+              /* Messages */
+/*******************************************************/
+
+
+.messages div {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.messages .success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+/* Add styles for other message types (error, warning, etc.) if needed */
+
+
+
+
+
+/*******************************************************/
+/* Responsive Styles for Tablets */
+/*******************************************************/
+
+@media (max-width: 768px) {
+  .header-title h1 {
+    font-size: 18px; /* Adjust font size for header on tablets */
+    text-align: left;
+    margin-left: 25px;
+  }
+
+  .header-search-input {
+    width: 200px; /* Reduced search bar width on tablets */
+  }
+
+  .directory-title-container h1 {
+    font-size: 24px; /* Adjust directory title size for tablets */
+  }
+
+  .breadcrumbs-container {
+    padding-left: 20px;
+  }
+
+  .directory-blurb {
+    margin-top: 10px;
+    font-size: 14px; /* Adjust blurb size for tablets */
+    line-height: 14px;
+  }
+}
+
+/*******************************************************/
+/* Responsive Styles for Mobile Phones */
+/*******************************************************/
+
+@media (max-width: 560px) {
+  .header-title {
+    width: 40%; /* Adjust width as needed for mobile */
+    text-align: left; /* Left-align title on mobile */
+  }
+
+  .header-search {
+    width: 50%; /* Adjust width as needed for mobile */
+  }
+
+  .header-search-input {
+    width: 150px; /* Further reduced search bar width on phones */
+  }
+
+  .directory-title-container h1 {
+    font-size: 30px; /* Adjust directory title size for phones */
+  }
+
+  .directory-blurb {
+    display: none !important; /* Hide the blurb on mobile devices */
+  }
+
+  .breadcrumbs-container {
+    padding-left: 10px;
+  }
+
+  .header-search-input {
+    width: 80px; /* Adjust the width as needed */
+    /* Other necessary styles */
+}
+}

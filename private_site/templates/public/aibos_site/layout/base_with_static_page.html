@@ -1,0 +1,50 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<header>
+    {% include "layout/header.html" %}
+</header>
+
+<!-- Breadcrumbs Section -->
+<div class="breadcrumbs-container">
+    {% include 'navigation/breadcrumbs.html' %}
+</div>
+
+<!-- Main Container -->
+<div class="container-1400px">
+    <!-- Left sidebar content 
+        <div class="sidebar left-sidebar">
+        <p>Left Sidebar Content</p>
+    </div>
+-->
+    <div class="main-content">
+        <!-- Toggle Icon -->
+        <div class="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+        {% block main_content %}
+        <!-- Main Content -->
+        <p>Main Content</p>
+        {% endblock main_content %}
+    </div>
+    <!-- Right sidebar content
+    <div class="sidebar right-sidebar" id="right-sidebar">
+        
+        <p>Right Sidebar Content</p>
+    </div>
+     -->
+</div>
+
+
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById('right-sidebar');
+        if (sidebar.style.display === 'none') {
+            sidebar.style.display = 'block';
+        } else {
+            sidebar.style.display = 'none';
+        }
+    }
+</script>
+
+
+{% endblock %}

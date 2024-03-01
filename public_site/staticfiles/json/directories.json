@@ -1,0 +1,371 @@
+[
+    {
+        "id": 1,
+        "level": 1,
+        "title": "History",
+        "slug": "history",
+        "blurb": "Chronicles the rich and complex past of Scotland from the earliest settlements to modern times, encompassing various eras, significant events, and transformations",
+        "parent": null,
+        "path": "history"
+    },
+    {
+        "id": 2,
+        "level": 1,
+        "title": "Culture",
+        "slug": "culture",
+        "blurb": "Explores the diverse and vibrant cultural aspects of Scotland, including language, literature, arts, governance, religion, social customs, festivals, and education",
+        "parent": null,
+        "path": "culture"
+    },
+    {
+        "id": 3,
+        "level": 1,
+        "title": "Places",
+        "slug": "places",
+        "blurb": "Describes the geographical and architectural diversity of Scotland, covering cities, towns, historical sites, natural landscapes, heritage sites, and regional characteristics",
+        "parent": null,
+        "path": "places"
+    },
+    {
+        "id": 4,
+        "level": 1,
+        "title": "Products",
+        "slug": "products",
+        "blurb": "Showcases the wide range of Scottish products, from traditional food and textiles to modern innovations in technology, agriculture, and renewable energy",
+        "parent": null,
+        "path": "products"
+    },
+    {
+        "id": 5,
+        "level": 2,
+        "title": "Early History and Kingdoms (Pre-9th Century)",
+        "slug": "history/early-history-kingdoms",
+        "blurb": "Explores the formation of early Scottish kingdoms and the origins of the clan system",
+        "parent": 1,
+        "path": "history/early-history-kingdoms"
+    },
+    {
+        "id": 6,
+        "level": 2,
+        "title": "Viking Invasions (8th-11th Centuries)",
+        "slug": "history/viking-invasions",
+        "blurb": "Chronicles Viking influences on Scotland's northern and coastal regions and their integration into Scottish society",
+        "parent": 1,
+        "path": "history/viking-invasions"
+    },
+    {
+        "id": 7,
+        "level": 2,
+        "title": "Formation of the Kingdom of Alba (9th-11th Centuries)",
+        "slug": "history/formation-of-the-kingdom-of-alba",
+        "blurb": "Details the unification of Pictish and Gaelic cultures and the rise of the Scottish monarchy",
+        "parent": 1,
+        "path": "history/formation-of-the-kingdom-of-alba"
+    },
+    {
+        "id": 8,
+        "level": 2,
+        "title": "Wars of Independence (13th-14th Centuries)",
+        "slug": "history/wars-of-independence",
+        "blurb": "Examines Scotland's struggle for independence and the pivotal role of clans in these conflicts",
+        "parent": 1,
+        "path": "history/wars-of-independence"
+    },
+    {
+        "id": 9,
+        "level": 2,
+        "title": "Stuart Dynasty and Union of the Crowns (15th-17th Centuries)",
+        "slug": "history/stuart-dynasty-union-of-the-crowns",
+        "blurb": "Covers the rule of the Stuart monarchy and the political changes leading to the Union of the Crowns",
+        "parent": 1,
+        "path": "history/stuart-dynasty-union-of-the-crowns"
+    },
+    {
+        "id": 10,
+        "level": 2,
+        "title": "Union of the Parliaments (1707)",
+        "slug": "history/union-of-the-parliaments",
+        "blurb": "Discusses the merging of the Scottish and English parliaments and its impact on Scottish autonomy",
+        "parent": 1,
+        "path": "history/union-of-the-parliaments"
+    },
+    {
+        "id": 11,
+        "level": 2,
+        "title": "Industrial Revolution (18th-19th Centuries)",
+        "slug": "history/industrial-revolution",
+        "blurb": "Focuses on Scotland's role in the Industrial Revolution and the subsequent social and economic transformations",
+        "parent": 1,
+        "path": "history/industrial-revolution"
+    },
+    {
+        "id": 12,
+        "level": 2,
+        "title": "Victorian Era and Cultural Revival (19th Century)",
+        "slug": "history/victorian-era-cultural-revival",
+        "blurb": "Highlights the 19th-century resurgence in Scottish culture and the romanticization of the clan system",
+        "parent": 1,
+        "path": "history/victorian-era-cultural-revival"
+    },
+    {
+        "id": 13,
+        "level": 2,
+        "title": "World Wars and Post-War Period (20th Century)",
+        "slug": "history/world-wars-post-war-period",
+        "blurb": "Reflects on Scotland's participation in the World Wars and the post-war societal changes",
+        "parent": 1,
+        "path": "history/world-wars-post-war-period"
+    },
+    {
+        "id": 14,
+        "level": 2,
+        "title": "Devolution and Modern Scotland (Late 20th Century-Present)",
+        "slug": "history/devolution-modern-scotland",
+        "blurb": "Discusses recent political developments, including the re-establishment of the Scottish Parliament and contemporary issues",
+        "parent": 1,
+        "path": "history/devolution-modern-scotland"
+    },
+    {
+        "id": 15,
+        "level": 2,
+        "title": "Language,  Literature,  and Media",
+        "slug": "culture/language-literature-media",
+        "blurb": "The evolution of Scottish languages, literature, and the role of media",
+        "parent": 2,
+        "path": "culture/language-literature-media"
+    },
+    {
+        "id": 16,
+        "level": 2,
+        "title": "Music,  Arts,  and Performing Arts",
+        "slug": "culture/music-arts-performing-arts",
+        "blurb": "Showcasing Scotland's rich artistic heritage in music, arts, and theatre",
+        "parent": 2,
+        "path": "culture/music-arts-performing-arts"
+    },
+    {
+        "id": 17,
+        "level": 2,
+        "title": "History and Evolution of Governance",
+        "slug": "culture/history-evolution-of-governance",
+        "blurb": "Tracing the development of Scottish government and political movements",
+        "parent": 2,
+        "path": "culture/history-evolution-of-governance"
+    },
+    {
+        "id": 18,
+        "level": 2,
+        "title": "Religion,  Beliefs,  and Social Institutions",
+        "slug": "culture/religion-beliefs-social-institutions",
+        "blurb": "Examining religious practices and their influence on social institutions",
+        "parent": 2,
+        "path": "culture/religion-beliefs-social-institutions"
+    },
+    {
+        "id": 19,
+        "level": 2,
+        "title": "Festivals,  Traditions,  and Social Customs",
+        "slug": "culture/festivals-traditions-social-customs",
+        "blurb": "Celebrating traditional and modern Scottish festivals and customs",
+        "parent": 2,
+        "path": "culture/festivals-traditions-social-customs"
+    },
+    {
+        "id": 20,
+        "level": 2,
+        "title": "Cuisine,  Gastronomy,  and Fashion",
+        "slug": "culture/cuisine-gastronomy-fashion",
+        "blurb": "Merging traditional cuisine with evolving fashion trends",
+        "parent": 2,
+        "path": "culture/cuisine-gastronomy-fashion"
+    },
+    {
+        "id": 21,
+        "level": 2,
+        "title": "Folklore,  Mythology,  and Oral Traditions",
+        "slug": "culture/folklore-mythology-oral-traditions",
+        "blurb": "Preserving Scotland's folklore and oral storytelling traditions",
+        "parent": 2,
+        "path": "culture/folklore-mythology-oral-traditions"
+    },
+    {
+        "id": 22,
+        "level": 2,
+        "title": "Civic and Cultural Organizations",
+        "slug": "culture/civic-cultural-organizations",
+        "blurb": "Focusing on organizations promoting cultural preservation and civic engagement",
+        "parent": 2,
+        "path": "culture/civic-cultural-organizations"
+    },
+    {
+        "id": 23,
+        "level": 2,
+        "title": "Education and Intellectual Movements",
+        "slug": "culture/education-intellectual-movements",
+        "blurb": "Documenting Scotland's educational history and intellectual contributions",
+        "parent": 2,
+        "path": "culture/education-intellectual-movements"
+    },
+    {
+        "id": 24,
+        "level": 2,
+        "title": "Cities and Towns",
+        "slug": "places/cities-towns",
+        "blurb": "Describing Scotland's cities and towns, rich in history and culture",
+        "parent": 3,
+        "path": "places/cities-towns"
+    },
+    {
+        "id": 25,
+        "level": 2,
+        "title": "Historical Sites and Monuments",
+        "slug": "places/historical-sites-monuments",
+        "blurb": "Highlighting castles, battlefields, and historical monuments",
+        "parent": 3,
+        "path": "places/historical-sites-monuments"
+    },
+    {
+        "id": 26,
+        "level": 2,
+        "title": "Landscapes and Natural Features",
+        "slug": "places/landscapes-natural-features",
+        "blurb": "Showcasing Scotland\ufffds diverse natural beauty",
+        "parent": 3,
+        "path": "places/landscapes-natural-features"
+    },
+    {
+        "id": 27,
+        "level": 2,
+        "title": "Architectural Styles",
+        "slug": "places/architectural-styles",
+        "blurb": "Exploring Scottish architectural evolution",
+        "parent": 3,
+        "path": "places/architectural-styles"
+    },
+    {
+        "id": 28,
+        "level": 2,
+        "title": "Protected Areas and Wildlife Reserves",
+        "slug": "places/protected-areas-wildlife-reserves",
+        "blurb": "Focusing on conservation and natural heritage",
+        "parent": 3,
+        "path": "places/protected-areas-wildlife-reserves"
+    },
+    {
+        "id": 29,
+        "level": 2,
+        "title": "Cultural and Heritage Sites",
+        "slug": "places/cultural-heritage-sites",
+        "blurb": "Including UNESCO sites and culturally significant locations",
+        "parent": 3,
+        "path": "places/cultural-heritage-sites"
+    },
+    {
+        "id": 30,
+        "level": 2,
+        "title": "Transport and Infrastructure",
+        "slug": "places/transport-infrastructure",
+        "blurb": "Discussing the development of Scotland\ufffds transport and infrastructure",
+        "parent": 3,
+        "path": "places/transport-infrastructure"
+    },
+    {
+        "id": 31,
+        "level": 2,
+        "title": "Educational Institutions",
+        "slug": "places/educational-institutions",
+        "blurb": "Highlighting Scotland's historic and modern educational establishments",
+        "parent": 3,
+        "path": "places/educational-institutions"
+    },
+    {
+        "id": 32,
+        "level": 2,
+        "title": "Regional Characteristics",
+        "slug": "places/regional-characteristics",
+        "blurb": "Exploring unique features of Scotland's various regions",
+        "parent": 3,
+        "path": "places/regional-characteristics"
+    },
+    {
+        "id": 33,
+        "level": 2,
+        "title": "Food and Beverages",
+        "slug": "products/food-beverages",
+        "blurb": "Showcasing iconic Scottish food and drinks like whisky and haggis",
+        "parent": 4,
+        "path": "products/food-beverages"
+    },
+    {
+        "id": 34,
+        "level": 2,
+        "title": "Textiles and Fashion",
+        "slug": "products/textiles-fashion",
+        "blurb": "Documenting the history and modern trends in Scottish textiles",
+        "parent": 4,
+        "path": "products/textiles-fashion"
+    },
+    {
+        "id": 35,
+        "level": 2,
+        "title": "Crafts and Handicrafts",
+        "slug": "products/crafts-handicrafts",
+        "blurb": "Showcasing traditional Scottish craftsmanship",
+        "parent": 4,
+        "path": "products/crafts-handicrafts"
+    },
+    {
+        "id": 36,
+        "level": 2,
+        "title": "Technology and Innovation",
+        "slug": "products/technology-innovation",
+        "blurb": "Exploring Scotland's contributions to technology and innovation",
+        "parent": 4,
+        "path": "products/technology-innovation"
+    },
+    {
+        "id": 37,
+        "level": 2,
+        "title": "Agriculture and Farming",
+        "slug": "products/agriculture-farming",
+        "blurb": "Discussing traditional and modern agricultural practices",
+        "parent": 4,
+        "path": "products/agriculture-farming"
+    },
+    {
+        "id": 38,
+        "level": 2,
+        "title": "Fisheries and Sea Products",
+        "slug": "products/fisheries-sea-products",
+        "blurb": "Covering the Scottish fishing industry and seafood",
+        "parent": 4,
+        "path": "products/fisheries-sea-products"
+    },
+    {
+        "id": 39,
+        "level": 2,
+        "title": "Forestry and Wood Products",
+        "slug": "products/forestry-wood-products",
+        "blurb": "Focusing on timber and wood-based crafts",
+        "parent": 4,
+        "path": "products/forestry-wood-products"
+    },
+    {
+        "id": 40,
+        "level": 2,
+        "title": "Energy and Natural Resources",
+        "slug": "products/energy-natural-resources",
+        "blurb": "Discussing traditional and renewable energy sources",
+        "parent": 4,
+        "path": "products/energy-natural-resources"
+    },
+    {
+        "id": 41,
+        "level": 2,
+        "title": "Media and Publishing",
+        "slug": "products/media-publishing",
+        "blurb": "Highlighting Scotland\ufffds role in media and publishing",
+        "parent": 4,
+        "path": "products/media-publishing"
+    }
+]

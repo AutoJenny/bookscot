@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Template Processing</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Process Template</button>
+    </form>
+    <hr>
+    <div>
+        <h2>Processed Template:</h2>
+        <p>{{ processed_text }}</p>
+    </div>
+</body>
+</html>

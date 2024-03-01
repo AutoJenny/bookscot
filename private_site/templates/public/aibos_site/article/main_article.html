@@ -1,0 +1,13 @@
+{% load static %}
+
+{% if directory.articles.first %}
+<div class="main-article">
+    {% with directory.articles.first as article %}
+    <div class="article-content">
+        {{ article.content|linebreaksbr }}
+    </div>
+    {% endwith %}
+</div>
+{% else %}
+    <p>No articles found for this directory.</p>
+{% endif %}

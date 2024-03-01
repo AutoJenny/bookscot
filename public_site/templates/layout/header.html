@@ -1,0 +1,86 @@
+{% load static %}
+
+<div class="header">
+    <!-- Left section (Logo) -->
+    <div class="header-logo">
+        <a href="/">
+            <img src="{% static 'images/site/bookofscotland_logo.png' %}" alt="Logo" style="width: 80px; height: 80px;">
+        </a>
+    </div>
+
+    <!-- Center section (Title) -->
+    <div class="header-title">
+        <h1>Book <span style="font-style: italic; font-family: 'Lucida Handwriting', cursive;">of</span>&nbsp;&nbsp;Scotland</h1>
+    </div>
+
+    <!-- Right section (Search Bar) -->
+    <div class="header-search">
+        <div class="nav-header-search">
+            <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Filter articles">
+            <button id="headerSearchInputClear" class="header-search-input-clear hidden">✖</button>
+            <div id="headerSearchResults" class="header-search-results"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('{% static "json/directories.json" %}')
+            .then(response => response.json())
+            .then(directories => {
+                const headerSearchInput = document.getElementById('headerSearchInput');
+                const headerResultsDiv = document.getElementById('headerSearchResults');
+                const headerClearBtn = document.getElementById('headerSearchInputClear');
+
+                headerSearchInput.addEventListener('input', function(e) {
+                    var searchTerm = e.target.value.toLowerCase();
+                    if (searchTerm) {
+                        var filteredResults = directories.filter(function(dir) {
+                            return dir.title.toLowerCase().includes(searchTerm) ||
+                                dir.blurb.toLowerCase().includes(searchTerm);
+                        });
+
+                        headerDisplayResults(filteredResults, searchTerm);
+                        headerClearBtn.classList.remove('hidden');
+                    } else {
+                        headerResultsDiv.innerHTML = '';
+                        headerResultsDiv.style.display = 'none';
+                        headerClearBtn.classList.add('hidden');
+                    }
+                });
+
+                headerClearBtn.addEventListener('click', function() {
+                    headerSearchInput.value = '';
+                    headerResultsDiv.innerHTML = '';
+                    headerResultsDiv.style.display = 'none';
+                    headerClearBtn.classList.add('hidden');
+                });
+
+                function headerDisplayResults(results, searchTerm) {
+                    if (results.length > 0) {
+                        headerResultsDiv.style.display = 'block';
+                    } else {
+                        headerResultsDiv.style.display = 'none';
+                    }
+                    headerResultsDiv.innerHTML = '';
+
+                    results.forEach(function(dir) {
+                        var link = document.createElement('a');
+                        link.className = 'header-search-result-item';
+                        link.href = '/directory/' + dir.id;
+
+                        var titleHighlighted = highlightText(dir.title, searchTerm);
+                        var blurbHighlighted = highlightText(dir.blurb, searchTerm);
+
+                        link.innerHTML = '<div>' + titleHighlighted + '</div><div class="blurb">' + blurbHighlighted + '</div>';
+                        headerResultsDiv.appendChild(link);
+                    });
+                }
+
+                function highlightText(text, term) {
+                    var re = new RegExp('(' + term + ')', 'gi');
+                    return text.replace(re, '<span class="highlight">$1</span>');
+                }
+            });
+    });
+</script>

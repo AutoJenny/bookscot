@@ -1,0 +1,69 @@
+{% load static %}
+
+<div class="nav-home-search">
+    <input type="text" id="searchInput" class="search-input" placeholder="Filter articles">
+    <button id="searchInputClear" class="search-input-clear hidden">✖</button>
+    <div id="searchResults" class="search-results"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('{% static "json/directories.json" %}')
+            .then(response => response.json())
+            .then(directories => {
+                const searchInput = document.getElementById('searchInput');
+                const resultsDiv = document.getElementById('searchResults');
+                const clearBtn = document.getElementById('searchInputClear');
+
+                searchInput.addEventListener('input', function(e) {
+                    var searchTerm = e.target.value.toLowerCase();
+                    if (searchTerm) {
+                        var filteredResults = directories.filter(function(dir) {
+                            return dir.title.toLowerCase().includes(searchTerm) ||
+                                dir.blurb.toLowerCase().includes(searchTerm);
+                        });
+
+                        displayResults(filteredResults, searchTerm);
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        resultsDiv.innerHTML = '';
+                        resultsDiv.style.display = 'none';
+                        clearBtn.classList.add('hidden');
+                    }
+                });
+
+                clearBtn.addEventListener('click', function() {
+                    searchInput.value = '';
+                    resultsDiv.innerHTML = '';
+                    resultsDiv.style.display = 'none';
+                    clearBtn.classList.add('hidden');
+                });
+
+                function displayResults(results, searchTerm) {
+                    if (results.length > 0) {
+                        resultsDiv.style.display = 'block';
+                    } else {
+                        resultsDiv.style.display = 'none';
+                    }
+                    resultsDiv.innerHTML = '';
+
+                    results.forEach(function(dir) {
+                        var link = document.createElement('a');
+                        link.className = 'search-result-item';
+                        link.href = '/directory/' + dir.id;
+
+                        var titleHighlighted = highlightText(dir.title, searchTerm);
+                        var blurbHighlighted = highlightText(dir.blurb, searchTerm);
+
+                        link.innerHTML = '<div>' + titleHighlighted + '</div><div class="blurb">' + blurbHighlighted + '</div>';
+                        resultsDiv.appendChild(link);
+                    });
+                }
+
+                function highlightText(text, term) {
+                    var re = new RegExp('(' + term + ')', 'gi');
+                    return text.replace(re, '<span class="highlight">$1</span>');
+                }
+            });
+    });
+</script>

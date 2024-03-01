@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+{% load static %}  <!-- This line loads the static tag library -->
+
+
+{% block content %}
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="{% static 'images/site/bookofscotland_logo.png' %}" alt="Logo" style="width: 120px; height: 120px; text-shadow: 2px 2px 4px; margin-top: 40px;">
+    <h1 style="font-size: 48pt; color:white; font-weight: bold; text-align: center; padding: 0px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); margin-top: 20px; ">
+        Book <span style="font-style: italic; font-size: 24pt; font-family: 'Lucida Handwriting', cursive;">of</span>&nbsp; Scotland
+    </h1>
+  
+
+    <!-- Search Box Heading -->
+    <h2 style="font-size: 24pt; color:white; font-weight: bold; text-align: center; margin-top: 80px; padding: 10px; text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);">
+        Where do you want to go today?
+    </h2>
+
+    <!-- Include main search box template -->
+    {% include 'navigation/home_search.html' %}
+
+    <!-- Include home navigation directories template -->
+    {% include 'navigation/home_nav_dirs.html' %}
+
+    <!-- Include subdirectories template to display top-level directories -->
+    {% include 'navigation/subdirectories.html' %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load static %}
+
+{% if directory.parent_id %}
+    <!-- For subdirectories, use parent's slug and directory's slug in the path -->
+    {% with 'images/directory/'|add:directory.parent.slug|add:'/'|add:directory.slug|add:'/'|add:directory.slug|add:'_1.jpg' as image_path %}
+        <img src="{% static image_path %}" alt="{{ directory.title }}">
+    {% endwith %}
+{% else %}
+    <!-- For main directories, use directory slug only -->
+    {% with 'images/directory/'|add:directory.slug|add:'/'|add:directory.slug|add:'_1.jpg' as image_path %}
+        <img src="{% static image_path %}" alt="{{ directory.title }}">
+    {% endwith %}
+{% endif %}

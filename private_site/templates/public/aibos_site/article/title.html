@@ -1,0 +1,16 @@
+{% if current_directory %}
+<div class="directory-title-container">
+    {% include 'directory/directory_image.html' with directory=current_directory %}
+    <div class="title-overlay">
+        <div class="title-background">
+            <h1>{{ current_directory.title }}</h1>
+        </div>
+        <!-- Add blurb here. Ensure it exists in your context -->
+        {% if current_directory.blurb %}
+            <p class="directory-blurb">{{ current_directory.blurb }}</p>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<h1>No category displaying - please report</h1>
+{% endif %}

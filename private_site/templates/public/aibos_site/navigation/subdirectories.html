@@ -1,0 +1,15 @@
+{% if subdirectories %}
+<div class="subdirectories-container">
+    <h2 class="subdirectory-title">Explore more about {{ current_directory.title }}</h2>
+    <ul class="subdirectory-list">
+        {% for subdirectory in subdirectories %}
+            <li class="subdirectory-item">
+                <a href="{% url 'directory_main_view' subdirectory.id %}" class="subdirectory-link">{{ subdirectory.title }}</a>
+                <p class="subdirectory-blurb">{{ subdirectory.blurb }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+    <p>No subdirectories available.</p>
+{% endif %}

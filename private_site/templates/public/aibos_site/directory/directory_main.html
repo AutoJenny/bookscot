@@ -1,0 +1,14 @@
+{% extends 'layout/base_with_sidebars.html' %}
+
+
+{% block main_content %}
+<div class="directory-main-content">
+    {% if current_directory %}
+    {% include 'article/title.html' %}
+    <div class="article-container">
+        {% include 'article/main_article.html' with directory=current_directory %}
+    </div>
+        {% include 'navigation/subdirectories.html' %}
+    {% endif %}
+</div>
+{% endblock main_content %}

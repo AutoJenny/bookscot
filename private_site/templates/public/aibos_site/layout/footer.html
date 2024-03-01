@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="custom-footer">
+    <div class="custom-footer-section custom-footer-left">
+        <a href="https://clan.com" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'images/site/clan-logo-header.png' %}" alt="CLAN.com logo" class="custom-footer-logo" />
+        </a>
+        <div class="custom-footer-strapline">
+            Thanks for the generous support of our lead Sponsor</br>
+            <a href="https://clan.com" target="_blank" class="custom-footer-link">
+                CLAN.com
+            </a>
+        </div>
+    </div>
+    <div class="custom-footer-section custom-footer-middle">
+        <!-- Add site links here -->
+        <a href="/about_us" class="custom-footer-link">About us</a>
+        <a href="/sponsorship" class="custom-footer-link">Sponsorship &amp; advertising</a>
+        <a href="javascript:void(0);" class="custom-footer-link" onclick="openContactModal();">Contact &amp; feedback</a>
+    <!-- More links as needed -->
+    </div>
+    <div class="custom-footer-section custom-footer-right">
+            © {{ current_year }} 2024 Book of Scotland
+    </div>
+</div>

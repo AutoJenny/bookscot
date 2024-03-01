@@ -1,0 +1,74 @@
+{% extends 'layout/base_with_sidebars.html' %}
+{% block title %} Contact{% endblock title %}
+
+{% block main_content %}
+<div class="directory-main-content">
+    <div class="static-article-container">
+        <div class="contact-form">
+            <h1>Contact Form</h1>
+It is IMPORTANT that you select the right type of message, or it may be lost.<br /><br />We do not need contact details unless you'd like a response (which we can't guarantee due to workload, but will do our best.)
+<br /><br />
+            <form id="contactForm" action="{% url 'submit_form' %}" method="post">
+                {% csrf_token %}
+                <select name="type_of_contact" required>
+                    <option value="" disabled selected>Type of message...</option>
+                    <option value="enquiry">Enquiry</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="correction">Correction</option>
+                    <option value="volunteering">Volunteering</option>
+                    <option value="sponsorship">Sponsorship</option>
+                    <option value="legal">Legal</option>
+                </select>
+                <input type="text" name="forename" placeholder="Forename">
+                <input type="text" name="surname" placeholder="Surname">
+                <input type="email" name="email" placeholder="Email">
+                <input type="tel" name="phone" placeholder="Phone">
+                <input type="text" name="url" placeholder="URL (web address, without 'http://')">
+                <textarea name="message" maxlength="500" required placeholder="Your message"></textarea>
+                <input type="hidden" name="page_id">
+                <input type="hidden" name="filepath">
+                <input type="hidden" name="datetime">
+                <input type="hidden" name="ip_address">
+                <input type="hidden" name="browser_specs">
+                <button type="submit">Submit your message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main_content %}
+
+{% block javascript %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('contactForm');
+        var urlField = form.querySelector('input[name="url"]');
+    
+        form.addEventListener('submit', function(event) {
+            // Populate hidden fields
+            document.getElementsByName('datetime')[0].value = new Date().toISOString();
+            document.getElementsByName('browser_specs')[0].value = navigator.userAgent;
+    
+            // Handle the URL field
+            var urlValue = urlField.value;
+            // Strip out 'http://' if it's there
+            if (urlValue.startsWith('http://')) {
+                urlValue = urlValue.substring(7);
+            }
+            // Prepend 'http://' to ensure consistency
+            urlValue = 'http://' + urlValue;
+            urlField.value = urlValue;
+    
+            // Validate the URL field
+            if (urlValue && !urlValue.includes('.')) {
+                alert("Please enter a valid URL.");
+                event.preventDefault(); // Prevent form submission
+            }
+    
+            // Other validations can be added here
+        });
+    });
+    </script>
+    
+    
+{% endblock javascript %}
