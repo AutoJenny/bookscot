@@ -6,11 +6,12 @@ import logging
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # ###############################################################################
 # .ENV FILE & SECRET KEY
 # ###############################################################################
- 
-env_path = f"{BASE_DIR}/.env"
+
+env_path = BASE_DIR / '.env'
 load_dotenv(dotenv_path=env_path)
 
 print(f"DEBUG: .env path used: {env_path}")
@@ -113,7 +114,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': f"{BASE_DIR}/public_site/debug.log", 
+            'filename': BASE_DIR / 'public_site/debug.log',
         },
     },
     'loggers': {
